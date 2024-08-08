@@ -1,0 +1,17 @@
+{
+    "name": "geosoft/escola",
+    "description": "Projeto de classes de uma escola",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Geosoft\\Escola\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "George Castro",
+            "email": "gamcastro14@gmail.com"
+        }
+    ],
+    "require": {}
+}
