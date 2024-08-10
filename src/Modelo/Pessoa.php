@@ -11,6 +11,7 @@ abstract class Pessoa
     protected readonly DateTime $dataNascimento ;
 
     public function __construct(
+        public readonly ?int $id,
         public readonly string $nome,
         public readonly string $cpf,
         string $dataNascimento
@@ -27,7 +28,10 @@ abstract class Pessoa
        }
             
              
-       
+       public function getDataNascimento() : string
+       {
+         return $this->dataNascimento->format('d/m/Y') ;
+       }
     
 
     public function getIdade() : int
