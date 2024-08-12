@@ -1,6 +1,6 @@
 <?php
 
-namespace Geosoft\Escola\Modelo ;
+namespace Geosoft\Escola\Domain\Modelo ;
 
 class Professor extends Pessoa
 {
