@@ -1,7 +1,17 @@
 <?php
+
+use Geosoft\Escola\Domain\Modelo\Aluno;
+use Geosoft\Escola\Infraestrutura\Persistencia\ConnectionCreator;
+use Geosoft\Escola\Infraestrutura\Repositorio\PdoAlunoRepositorio;
+
+    require "vendor/autoload.php" ;
+    
+    $conexao = ConnectionCreator::CreateConnection() ;
     if (isset($_POST['cadastrar']))
     {
-        var_dump($_POST) ;
+        $aluno = new Aluno(null,$_POST['nome'],$_POST['cpf'],$_POST['dataNascimento']) ;
+        $alunoRepositorio = new PdoAlunoRepositorio($conexao) ;
+        $alunoRepositorio->salvar($aluno) ;
     }
 ?>
 <!DOCTYPE html>
@@ -19,7 +29,7 @@
         <label for="cpf">CPF: </label>
         <input type="text" id="cpf" name="cpf"><br>
         <label for="dataNascimento">Data de Nascimento: </label>
-        <input type="text" id="cpf" name="cpf"><br>
+        <input type="text" id="dataNascimento" name="dataNascimento"><br>
         <input type="submit" name="cadastrar">
     </form>
 </body>
