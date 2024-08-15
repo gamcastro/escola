@@ -2,15 +2,13 @@
 
 namespace Geosoft\Escola\Domain\Modelo ;
 
-class Turma 
+class Turma
 {
     private  $alunos = [] ;
-    public function __construct
-    (
+    public function __construct(
         public readonly string $nome ,
         public readonly string $ano
-    )
-    {
+    ) {
 
     }
 
@@ -23,9 +21,8 @@ class Turma
     {
         foreach ($this->alunos as $index=>$aluno)
         {
-            if($aluno->$cpf == $cpf)
-            {
-                unset($aluno[$index]) ;
+            if($aluno->$cpf == $cpf) {
+                unset($aluno[$index]);
                 return true ;
             }
         }

@@ -10,8 +10,7 @@ class Professor extends Pessoa
         string $cpf,
         string $dataNascimento,
         public readonly string $matricula
-    )
-    {
-        parent::__construct($id,$nome,$cpf,$dataNascimento) ;
+    ) {
+        parent::__construct($id, $nome, $cpf, $dataNascimento);
     }
 }
