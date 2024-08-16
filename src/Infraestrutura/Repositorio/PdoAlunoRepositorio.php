@@ -26,32 +26,4 @@ class PdoAlunoRepositorio implements AlunoRepositorio
         return $stmt->execute();
 
     }
-
-    public function allAlunos(): array
-    {
-        $sql = "SELECT * from alunos" ;
-        $stmt = $this->conexao->query($sql); 
-      
-
-        return $this->hydrateAluno($stmt);
-    }
-
-    private function hydrateAluno(PDOStatement $stmt): array
-    {
-        $alunoDataList = $stmt->fetchAll(mode:PDO::FETCH_ASSOC);
-        $AlunoList = [] ;
-      
-        foreach ($alunoDataList as $alunoData) {
-            $aluno =  new Aluno(
-                $alunoData['id'],
-                $alunoData['nome'],
-                $alunoData['cpf'],
-                $alunoData['data_nascimento']
-            );
-
-            $AlunoList[] = $aluno ;
-        }
-
-        return $AlunoList ;
-    }
 }
