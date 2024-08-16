@@ -9,7 +9,7 @@ class ConnectionCreator
     public static function CreateConnection(): PDO
     {
         $databasePath = __DIR__ . '/../../../escola.sqlite';
-        $conexao = new PDO(dsn:'sqlite:' . $databasePath ) ;
+        $conexao = new PDO(dsn:'sqlite:' . $databasePath);
         return $conexao ;
     }
 }
